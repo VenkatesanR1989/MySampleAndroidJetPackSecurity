@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="fileEntity"
+            type="com.sample.jetpacksecurity.FileEntity" />
+        <variable
+            name="handler"
+            type="com.sample.jetpacksecurity.FileAdapter.FileAdapterListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:minHeight="?listPreferredItemHeightSmall"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{(view) -> handler.onFileClicked(fileEntity)}">
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:text="@{fileEntity.title}"
+            tools:text="rocket_design.txt"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:text="Just now"/>
+
+    </LinearLayout>
+
+</layout>
